@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+<title>慢慢儿玩 - 在线图像编辑工具</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ed8f31">
+
+<link href="./src/bootstrap.min.css" rel="stylesheet">
+<link href="./src/font-awesome.min.css" rel="stylesheet">
+<link href="./src/css" rel="stylesheet">
+
+<link rel="stylesheet" href="./src/style.css" type="text/css" media="screen">
+<link rel="shortcut icon" href="./img/favicon.ico">
+<link rel="bookmark" href="./img/favicon.ico" type="image/x-icon">
+
+<script type="text/javascript" src="./src/jquery.js"></script>
+<script type="text/javascript" src="./src/jquery-migrate.min.js"></script>
+
+	</head>
+
+	<body class="ps-frontpage">
+		<div id="isolated"></div>
+		<div class="container-main">
+			<a name="hop"></a>
+
+		
+			<header class="navbar navbar-default navbar-primary" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-menu">
+						<span class="sr-only">Toggle navigation</span>
+						<i class="fa fa-bars"></i>
+						</button>
+						<a class="navbar-logo" href="http://www.manmanerwan.cn">
+							<img src="./img/logo.png" width="37" height="37">
+							慢慢儿玩
+						</a>
+					</div>
+
+					<nav class="collapse navbar-collapse" id="navbar-collapse-menu">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#guide">使用指南</a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#show">演示</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<section class="page-header-main is-link ">
+				<div class="container">
+					<div class="page-header-main-image frontpage">
+						<img src="./img/FE-Img-cn.png" class="parallax" style="transform: translate3d(0px, 0px, 0px);">
+					</div>
+					<a href="./FE-Img/canvas.html" target="_blank">
+						<div class="page-header-main-title">
+							<span class="title-head">
+								<span style="background-color: #29bbf4;box-shadow: 0.5em 0 0 #29bbf4,-0.5em 0 0 #29bbf4">在线图像编辑工具</span>
+							</span>
+							<span class="title-subtitle">
+								<span style="background-color: #29bbf4;box-shadow: 0.5em 0 0 #29bbf4,-0.5em 0 0 #29bbf4">简单易用、非线性编辑、实时渲染、所见即所得。现在就来体验吧！
+							</span>
+							</span>
+						</div>
+					</a>
+				</div>
+			</section>
+			<section class="page-header-main-footer">
+				<div class="page-header-main-cta">
+					<a  href="./FE-Img/canvas.html" target="_blank" class="cta-download">
+						即刻开始，感受不一样的图像编辑方式
+					</a>
+				</div>
+			</section>
+			<section class="page-card about">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="page-card">
+								<p class="page-card-title">简单易用，功能强大。</p>
+								<div class="page-card-text">
+									作为一个图片编辑工具，可以在线对图片进行处理并保存到本地。轻点鼠标，拖拽、连接所需要的功能面板就可以完成操作。
+									<br>
+									支持像素级别的修改、美化，包含曲线编辑、像素处理、高斯模糊、仿Lomo效果、素描、美肤等预置特效，能够实时预览修改的结果。
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="page-card">
+								<p class="page-card-title">基于 JavaScript 以及 HTML5 技术制作，随时在线编辑。</p>
+								<div class="page-card-text">
+									通过 JavaScript 在 HTML5 的基础上实现了在网页浏览器中编辑处理图片的能力。
+									<br>
+									无需在计算机中安装应用程序，访问网络就可以方便地修改图片。
+									<br>
+									鉴于 HTML5 技术的特性，建议使用 QQ浏览器（9.6.5） 或者较新版本的 Chrome（61.0.31） 、 Opera（45.0） 等支持 HTML5 技术的浏览器。出于对 JavaScript 兼容性的考虑，不同浏览器在表现上会有所差异，因而<strong>不保证支持 IE 与 FireFox 浏览器！</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="page-card">
+								<p class="page-card-title">免费、开源，敬请随心使用，没有任何限制。</p>
+								<div class="page-card-text">
+									这是一个免费的图片编辑工具，以 NORYOM/FlowEngine 为基础编写操作界面，图像处理核心采用 AlloyImage 图片图像处理库。
+								</div>
+								<ul class="page-card-list">
+									<li><a href="https://github.com/NORYOM/FlowEngine-Dev/wiki" target="_blank">NORYOM/FlowEngine</a></li>
+									<li><a href="http://alloyteam.github.io/AlloyPhoto/" target="_blank">AlloyImage</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<a name="guide"></a>
+			<section class="page-card features">
+				<div class="container">
+					<div class="page-card-title">从这里起步</div>
+					<ul class="page-card-list">
+						<li class="feature-item visible">
+							<div class="feature-details">
+								<div class="feature-title">基本的操作界面</div>
+								<div class="feature-desc">
+									<p>在操作界面上首先看到的是顶部一排按钮，点击它们将会添加相应的功能面板到下面的网格中。</p>
+									<ul>
+										<li>文件 - 提供选取文件的面板，选择要处理的图像文件</li>
+										<li>预览 - 实时观察编辑修改的效果</li>
+										<li>保存 - 把修改后的结果保存下来</li>
+										<li>曲线编辑器 - 通过曲线调整图像明暗灰度等</li>
+										<li>效果 - 包括美肤、素描、仿Lomo、柔焦等14项预置的滤镜特效</li>
+										<li>像素处理 - 包括灰度、反色等简单的图像效果</li>
+										<li>高斯模糊 - 对图像进行高斯模糊处理</li>
+										<li>数值 - 输出数值，给其他需要配合使用的功能面板提供参数</li>
+									</ul>
+								</div>
+							</div>
+							<div data-url="./img/FE-Img-Guide-01.png" data-credits="基本操作界面" class="feature-image js-isolify">
+								<img src="./img/FE-Img-Guide-01.png">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div class="feature-details">
+								<div class="feature-title">简易的拖拽方式</div>
+								<div class="feature-desc">
+									<p>通过连线连接两个功能面板，可以将图像数据传递下去，对图像的编辑修改都是通过连线来完成的。</p>
+									<ul>
+										<li>几乎所有功能面板右下方都有输出端口（一个小圆圈），而输入端口则排列在面板左上方</li>
+										<li>用鼠标选择并按住一个面板的输出端不放，输入端会呈现出蓝色，移动鼠标可以拖拽出一条连线</li>
+										<li>将连线拖拽到想要连接的面板的输入端后，输入端会呈现出绿色，此时放开鼠标使连线固定，两个面板就连接成功了</li>
+										<li>如果想要断开连接，请从输入端按下鼠标并拖拽连线至其他任意地方后松开</li>
+									</ul>
+								</div>
+							</div>
+							<div data-url="./img/FE-Img-Guide-02.png" data-credits="用连线连接功能面板" class="feature-image js-isolify">
+								<img src="./img/FE-Img-Guide-02.png">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div class="feature-details">
+								<div class="feature-title">连线法则</div>
+								<div class="feature-desc">
+									<p>在操控连线连接两个功能面板的时候需要明白一些操作上的注意事项，否则会对工具的使用产生一定的疑问和影响</p>
+									<ul>
+										<li>所有的连线必须从输出端开始，输入端不能拖拽出一条连线</li>
+										<li>当输出/输入端已经被连接（被占用）时将显示为黄色</li>
+										<li>输出端可以有多个连接，但是输入端只能有一条连线</li>
+										<li>当试图拖放一条连线在已经被占用的输入端上时，输入端会显示红色并提出警示信息</li>
+										<li>一个面板的输出端可以连接到自己的输入端，不过这在应用中没有什么实际意义</li>
+									</ul>
+								</div>
+							</div>
+							<div data-url="./img/FE-Img-Guide-03.png" data-credits="同一个面板输出多条连线" class="feature-image js-isolify">
+								<img src="./img/FE-Img-Guide-03.png">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div class="feature-details">
+								<div class="feature-title">“效果” 和 “像素处理”</div>
+								<div class="feature-desc">
+									<p>使用“效果”和“像素处理”两个功能面板预置了十几种的图像滤镜，可以轻松地使图像产生期望的特效</p>
+									<ul>
+										<li>添加 “效果” 或 “像素处理” 面板后，从下拉框中选择想要使用的滤镜</li>
+										<li>“效果”面板中包含了多达14种滤镜，且与 PhotoShop 相对应</li>
+										<li>“像素处理”拥有四种像素级别的处理功能</li>
+									</ul>
+								</div>
+							</div>
+							<div data-url="./img/FE-Img-Guide-04.png" data-credits="效果、像素处理" class="feature-image js-isolify">
+								<img src="./img/FE-Img-Guide-04.png">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div class="feature-details">
+								<div class="feature-title">高斯模糊</div>
+								<div class="feature-desc">
+									<p>高斯模糊需要配合 “数值” 面板一起使用，这样处理是因为在预览面板中显示的是缩略图，其效果和实际尺寸图像的模糊效果会有偏差。通过数值作为参数可以更精确地设定模糊效果。</p>
+									<ul>
+										<li>把 “高斯模糊” 和 “数值” 面板添加到网格视图中</li>
+										<li>图像的来源连接到 “输入图片” 端口</li>
+										<li>“数值” 的输出端与 “猫虎参数” 端口连接</li>
+										<li>在 “数值” 面板上点击 “+” 或 “-” 按钮来分别选择百位数、十位数和个位数</li>
+										<li>当数值为 0 时不会产生模糊效果，最小值请从 1 开始</li>
+									</ul>
+								</div>
+							</div>
+							<div data-url="./img/FE-Img-Guide-05.png" data-credits="高斯模糊" class="feature-image js-isolify">
+								<img src="./img/FE-Img-Guide-05.png">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div class="feature-details">
+								<div class="feature-title">曲线编辑器</div>
+								<div class="feature-desc">
+									<p>曲线编辑器是一个非常有用的工具，它可以进行图形明暗的调节。如果你了解直方图，那将能够非常方便地使用这个工具。</p>
+									<ul>
+										<li>将图像来源与曲线编辑器连接，它的输出将是经过明暗（灰度）调节的图像</li>
+										<li>曲线编辑器中从左下方到右上方有一条实线，线中间会有一个或多个控制点</li>
+										<li>用鼠标选中并拖拽实线上的控制点来改变图像明暗</li>
+										<li>在曲线编辑器面板右下方的 “+” 和 “-” 两个按钮分别表示添加或删除曲线控制点</li>
+										<li>控制点最多有 8 个，最少为 0</li>
+										<li>当有多个控制点时，最近操控过的那个控制点显示为黄色</li>
+									</ul>
+								</div>
+							</div>
+							<div data-url="./img/FE-Img-Guide-06.png" data-credits="曲线编辑器" class="feature-image js-isolify">
+								<img src="./img/FE-Img-Guide-06.png">
+							</div>
+						</li>
+					</ul>
+					<a name="show"></a>
+					<div class="page-card-title">开启新世界</div>
+					<ul class="page-card-list">
+						<li class="feature-item visible">
+							<div data-url="./img/01.gif" data-credits="拖拽进行连接" class="feature-image js-isolify">
+								<center><p class="feature-title">拖拽进行连接</p></center>
+								<br>
+								<img src="./img/01.gif">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div data-url="./img/01-1.gif" data-credits="断开连接" class="feature-image js-isolify">
+								<center><p class="feature-title">断开连接</p></center>
+								<br>
+								<img src="./img/01-1.gif">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div data-url="./img/01-2.gif" data-credits="多个输出与单个输入" class="feature-image js-isolify">
+								<center><p class="feature-title">多个输出与单个输入</p></center>
+								<br>
+								<img src="./img/01-2.gif">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div data-url="./img/02.gif" data-credits="像素处理" class="feature-image js-isolify">
+								<center><p class="feature-title">像素处理</p></center>
+								<br>
+								<img src="./img/02.gif">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div data-url="./img/03.gif" data-credits="滤镜效果" class="feature-image js-isolify">
+								<center><p class="feature-title">滤镜效果</p></center>
+								<br>
+								<img src="./img/03.gif">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div data-url="./img/04.gif" data-credits="高斯模糊" class="feature-image js-isolify">
+								<center><p class="feature-title">高斯模糊</p></center>
+								<br>
+								<img src="./img/04.gif">
+							</div>
+						</li>
+						<li class="feature-item visible">
+							<div data-url="./img/05.gif" data-credits="曲线编辑器" class="feature-image js-isolify">
+								<center><p class="feature-title">曲线编辑器</p></center>
+								<br>
+								<img src="./img/05.gif">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="page-footer-main footer">
+				<div class="page-footer-main-title">
+					<span class="title-head">还在等什么？</span>
+				</div>
+				<div class="page-header-main-cta">
+					<a  href="./FE-Img/canvas.html" target="_blank" class="cta-download">
+						立即体验
+					</a>
+				</div>
+			</section>
+			<div id="widget-scroll" class="">
+				<i class="fa fa-angle-down"></i>
+			</div>
+			<script>/* Parallax */
+				function $$(selector, context) {
+						context = context || document;
+						var elements = context.querySelectorAll(selector);
+						return Array.prototype.slice.call(elements);
+				}
+
+
+
+				var feature_items = document.getElementsByClassName('feature-item');
+
+				function triggerVisible() {
+					for(var i = 0; i < feature_items.length; i++){
+						var offset = feature_items[i].offsetTop + (window.innerHeight / 2);
+
+						if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset){
+							if (!feature_items[i].classList.contains('visible')){
+								feature_items[i].className += " visible";
+							}
+						}
+					}
+				}
+
+
+				/* Is it a touch device? */
+				var touchDevice = 'ontouchstart' in window;
+
+				var body = document.body, 
+					html = document.documentElement;
+				var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+				var widget_scroll = document.getElementById('widget-scroll');
+
+				window.addEventListener("scroll", function() {
+					var scrolledHeight= window.pageYOffset;
+
+					if (scrolledHeight < (window.height - window.innerHeight)){
+						widget_scroll.className = 'active';
+					} else {
+						widget_scroll.className = '';
+					}
+
+					if (!touchDevice){
+						$$(".parallax").forEach(function(el,index,array) {
+							var limit= el.offsetTop+ el.offsetHeight;
+							if(scrolledHeight > el.offsetTop && scrolledHeight <= limit) {
+								el.style.transform= ('translate3D(0,' + (scrolledHeight - el.offsetTop) /2+ 'px, 0)');
+							}
+							else {
+								el.style.transform= ('translate3D(0, 0, 0)');
+							}
+						});
+					}
+
+					triggerVisible();
+				});
+			</script>
+		</div> <!-- main container -->
+		<div class="footer-navigation"> <!-- Sitemap -->
+			<div class="container">
+			</div> <!-- footer container -->
+		</div> <!-- footer-navigation -->
+
+		<footer>
+			<span>
+				灵感源自 <a href="https://www.blender.org/">blender.org</a> <i class="fa fa-heart-o"></i>
+			</span>
+			<div id="hop" title="Be awesome in space" class="active"><i class="fa fa-angle-up"></i></div>
+
+		</footer>
+	<script type="text/javascript" src="./src/tutti.min.js"></script>
+			<script type="text/javascript">
+				var hop = document.getElementById("hop");
+				hop.onclick = function(e){ window.scrollTo(0, 0);}
+
+				window.addEventListener("scroll", function() {
+					if (window.pageYOffset > 250){ hop.className = 'active'; } else {	hop.className = ''; }
+				});
+			</script>
+	<script type="text/javascript">
+		$('#widget-scroll').on('click', function(){
+		$('html, body').animate({ scrollTop: '+=' + window.innerHeight}, 1200);
+		});
+	</script>
+
+</body></html>

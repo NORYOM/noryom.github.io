@@ -1,0 +1,165 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<script src="./alloyimage-1.1.js"></script>
+	<script src="./BaseObj.js"></script>
+	<script src="./Button.js"></script>
+	<script src="./ParamPoint.js"></script>
+	<script src="./Block.js"></script>
+	<script src="./ImageView.js"></script>
+	<script src="./BlockImgFile.js"></script>
+	<script src="./BlockImgView.js"></script>
+	<script src="./BlockImgEFS.js"></script>
+	<script src="./BlockImgSEF.js"></script>
+	<script src="./BlockImgGauss.js"></script>
+	<script src="./Bezier.js"></script>
+	<script src="./Selector.js"></script>
+	<script src="./DigiNum.js"></script>
+	<script src="./BlockDigiValue.js"></script>
+	<script src="./BlockImgCurves.js"></script>
+	<script src="./BlockImgSave.js"></script>
+	<script src="./driver.js"></script>
+	<script src="./bg.js"></script>
+	<style>
+	/* Loading Timer*/
+	.timer{
+		width: 24px;
+		height: 24px;
+		background-color: transparent;
+		box-shadow: inset 0px 0px 0px 2px #000000;
+		border-radius: 50%;
+		position: relative;
+	 }
+	.timer:after, .timer:before{
+		position: absolute;
+		content:"";
+		background-color: #000000;
+	}
+	.timer:after{
+		width: 10px;
+		height: 2px;
+		top: 11px;
+		left: 11px;
+		-webkit-transform-origin: 1px 1px;
+		   -moz-transform-origin: 1px 1px;
+				transform-origin: 1px 1px;
+		-webkit-animation: minhand 2s linear infinite;
+		   -moz-animation: minhand 2s linear infinite;
+				animation: minhand 2s linear infinite;
+	}
+
+	.timer:before{
+		width: 8px;
+		height: 2px;
+		top: 11px;
+		left: 11px;
+		-webkit-transform-origin: 1px 1px;
+		   -moz-transform-origin: 1px 1px;
+				transform-origin: 1px 1px;
+		-webkit-animation: hrhand 8s linear infinite;
+		   -moz-animation: hrhand 8s linear infinite;
+				animation: hrhand 8s linear infinite;
+	}
+
+	@-webkit-keyframes minhand{
+		0%{-webkit-transform:rotate(0deg)}
+		100%{-webkit-transform:rotate(360deg)}
+	}
+	@-moz-keyframes minhand{
+		0%{-moz-transform:rotate(0deg)}
+		100%{-moz-transform:rotate(360deg)}
+	}
+	@keyframes minhand{
+		0%{transform:rotate(0deg)}
+		100%{transform:rotate(360deg)}
+	}
+
+	@-webkit-keyframes hrhand{
+		0%{-webkit-transform:rotate(0deg)}
+		100%{-webkit-transform:rotate(360deg)}
+	}
+	@-moz-keyframes hrhand{
+		0%{-moz-transform:rotate(0deg)}
+		100%{-moz-transform:rotate(360deg)}
+	}
+	@keyframes hrhand{
+		0%{transform:rotate(0deg)}
+		100%{transform:rotate(360deg)}
+	}
+	</style>
+	<script>
+		var ctx;
+		var fps = 60;
+		var canvas;
+		var cvsRect;
+		window.onload = function(){
+			initCanvas("canvas1",document.body.clientWidth+10,window.innerHeight-40);
+			var loadingDiv = document.getElementById("loadingDiv");
+			var canvas = document.getElementById("canvas1");
+			loadingDiv.style.top = canvas.style.top;
+			loadingDiv.style.left = canvas.style.left;
+			loadingDiv.style.width = canvas.width + "px";
+			loadingDiv.style.height = canvas.height + "px";
+			var pa = document.getElementById("pa");
+			pa.style.top = window.innerHeight/2 - 300/2 + "px";
+			pa.style.left = window.innerWidth/2 - 150/2 - 50 + "px";
+
+			var msg = document.getElementById("msg");
+			msg.style.top = window.innerHeight/2 - 300/2 + "px";
+			msg.style.left = window.innerWidth/2 - 150/2 -50 + "px";
+		}
+		function hideLoading(){
+			document.getElementById("loadingDiv").style.display = "none";
+		}
+		function showLoading(){
+			document.getElementById("loadingDiv").style.display = "block";
+		}
+		function showMsg(str){
+			document.getElementById("info").innerHTML = str;
+			document.getElementById("msg").style.display = "block";
+		}
+		function hideMsg(){
+			document.getElementById("msg").style.display = "none";
+		}
+	</script>
+</head>
+<body bgcolor="#777777">
+	<input type="button" value="  文件  " onclick="addFileObj();">
+	<input type="button" value="  预览  " onclick="addViewObj();">
+	<input type="button" value="  保存  " onclick="addSaveObj();">
+	|
+	<input type="button" value="  曲线编辑器  " onclick="addCurveObj();">
+	<input type="button" value="  效果  " onclick="addEFSObj();">
+	<input type="button" value="  像素处理  " onclick="addSEFObj();">
+	<input type="button" value="  高斯模糊  " onclick="addGaussObj();">
+	<input type="button" value="  数值  " onclick="addDVObj();">
+	<br>
+	<canvas id="canvas1" style="border:0px solid red; cursor:default;position: absolute;top: 35px;left: 0;">
+		浏览器不支持HTML5
+	</canvas>
+	<div id="loadingDiv" style="display:none;z-index:998;position:absolute;opacity:0.85;background-color:#222222">
+		<div id="pa" style="width:300px;height:150px;z-index:999;position:absolute;border:1px solid #eeeebb;">
+			<table width="100%" border="0" height="100%" style="background-color:#ffffaa;font-size:22px;">
+				<tr>
+					<td align="right" valign="middle" width="30">
+						<div class="timer"></div>
+					</td>
+					<td align="center" valign="middle">
+						正在处理，请稍后……
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="msg" style="display:none;width:300px;height:150px;z-index:999;position:absolute;border:1px solid #ddddaa;">
+		<table width="100%" border="0" height="100%" style="background-color:#ffffaa;font-size:18px;">
+			<tr>
+				<td align="center" valign="middle">
+					<span id="info"></span>
+					<br><br>
+					<input type="button" onclick="hideMsg();" value="知道了">
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
