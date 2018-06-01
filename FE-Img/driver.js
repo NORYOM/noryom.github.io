@@ -47,7 +47,7 @@ function initCanvas(canvasId,width,height){
 	};
 
 	canvas.onmousedown = function(e){
-		e = e.touches?e.touches[0]:window.event;
+// 		e = e.touches?e.touches[0]:window.event;
 		mouseInPanel = 0;
 		// for block
 		//for showing order, high priority will render first
@@ -108,7 +108,7 @@ function initCanvas(canvasId,width,height){
 		mouseCanDrag = true;
 	};
 	canvas.onmouseup = function(e){
-		e = e.touches?e.touches[0]:window.event;
+// 		e = e.touches?e.touches[0]:window.event;
 		mouseCanDrag = false;
 		objExclusiveLock = false;
     	for(var i=0;i<objArr.length;i++){
@@ -154,7 +154,7 @@ function initCanvas(canvasId,width,height){
 
 	canvas.onmousemove = function (e){
         var e = e || window.event;
-        e = e.touches?e.touches[0]:window.event;
+//         e = e.touches?e.touches[0]:window.event;
 
         // move on block
     	for(var i=0;i<objArr.length;i++){
