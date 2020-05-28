@@ -91,8 +91,8 @@ function BlockImgSave(){
             saveCvs.getContext("2d").drawImage(img,0,0,img.width,img.height);
             if(!saveLnk){
                 saveLnk = document.createElement("a");
-                saveLnk.download = "新图片.jpg";
-                if(navigator.userAgent.indexOf("QQBrowser")==-1 || img.width*img.height>1920*1152){// only QQBrowser and size less then 2560*1536 support download
+                //saveLnk.download = "新图片.jpg";
+                //if(navigator.userAgent.indexOf("QQBrowser")==-1 || img.width*img.height>1920*1152){// only QQBrowser and size less then 2560*1536 support download
                     var div = document.createElement("div");
                     div.align = "center";
                     div.style.zIndex = 999;
@@ -133,9 +133,9 @@ function BlockImgSave(){
                     div.appendChild(document.createElement("br"));
                     div.appendChild(btn);
                     document.body.appendChild(div);
-                }else{
-                    saveLnk.href = saveCvs.toDataURL("image/jpeg").replace("image/jpeg",'image/octet-stream');
-                }
+                //}else{
+                //    saveLnk.href = saveCvs.toDataURL("image/jpeg").replace("image/jpeg",'image/octet-stream');
+                //}
                 saveLnk.click();
                 saveLnk.remove();
                 saveLnk = null;
